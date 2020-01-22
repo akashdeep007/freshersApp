@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "618895528937",
+    "firebase_url": "https://generated-arena-265309.firebaseio.com",
+    "project_id": "generated-arena-265309",
+    "storage_bucket": "generated-arena-265309.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618895528937:android:7a347de371ca714c693178",
+        "android_client_info": {
+          "package_name": "com.radium.hogwarts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618895528937-5h6b96opfe99vqre1dmdns2bdn573vcv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX4zTXWansQoc38IB8qLKPzk_0XOdIGzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618895528937-5h6b96opfe99vqre1dmdns2bdn573vcv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
