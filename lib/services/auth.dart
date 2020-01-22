@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hogwarts/models/user.dart';
+import 'package:hogwarts/services/database.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -38,11 +39,17 @@ class AuthService {
   }
 
   //register with email
-  Future registerwithEmailandPassword(String email, String password) async {
+  Future registerwithEmailandPassword(
+      String name, String email, String password, String interests) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+
+      //add to database
+      await DatabaseService(uid: user.uid)
+          .updateUserData(name, email, interests);
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());

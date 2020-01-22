@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:hogwarts/screens/autheticate/register.dart';
 import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/shared/loading.dart';
 
