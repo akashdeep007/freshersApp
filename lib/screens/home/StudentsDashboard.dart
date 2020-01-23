@@ -24,14 +24,39 @@ class StudentDashboard extends StatelessWidget {
                   children: <Widget>[
                     Card(
                       color: Colors.black12,
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        height: 150,
+                        width: 160,
+                        child: Column(
+                          children: <Widget>[
+                            Text(studentLenght.toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 72)),
+                            Text("Enrolled",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 36)),
+                          ],
+                        ),
+                      ),
                     ),
                     Card(
-                      child: Column(
-                        children: <Widget>[
-                          Text("12"),
-                        ],
-                      ),
                       color: Colors.black12,
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        height: 150,
+                        width: 160,
+                        child: Column(
+                          children: <Widget>[
+                            Text("59",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 72)),
+                            Text("Total",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 36)),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

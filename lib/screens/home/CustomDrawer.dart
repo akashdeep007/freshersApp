@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hogwarts/models/user.dart';
 import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/screens/home/StudentsDashboard.dart';
 import 'package:hogwarts/screens/home/home.dart';
+import 'package:hogwarts/services/database.dart';
+import 'package:provider/provider.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AuthService _auth = AuthService();
+    final user = Provider.of<User>(context);
     return Drawer(
       child: Column(
         children: <Widget>[
-          Card(
-            child: Column(children: <Widget>[
-              Icon(Icons.person),
-            ]),
-          ),
           FlatButton(
             child: Text("HomePage"),
             onPressed: () {

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hogwarts/models/Student.dart';
+import 'package:hogwarts/models/user.dart';
 
 class DatabaseService {
   final String uid;
@@ -27,5 +28,22 @@ class DatabaseService {
 
   Stream<List<Student>> get students {
     return studentCollection.snapshots().map(_StudentListFromSnapshot);
+  }
+
+  //userdata from snapshots
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+        uid: uid,
+        name: snapshot.data['Name'],
+        email: snapshot.data['Email'],
+        interest: snapshot.data['Interest']);
+  }
+
+  //get user doc
+  Stream<UserData> get userData {
+    return studentCollection
+        .document(uid)
+        .snapshots()
+        .map(_userDataFromSnapshot);
   }
 }
