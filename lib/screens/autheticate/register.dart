@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hogwarts/screens/autheticate/LoginDrawer.dart';
 import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/shared/loading.dart';
 
@@ -26,20 +27,14 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: Colors.amber[50],
             appBar: AppBar(
               elevation: 0.0,
               backgroundColor: Colors.amber,
               title: Text("Register"),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text("Anonymous"),
-                  onPressed: () {
-                    _auth.signInAnon();
-                  },
-                )
-              ],
             ),
+            drawer: LoginDrawer(),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
               child: Form(
@@ -47,7 +42,7 @@ class _RegisterState extends State<Register> {
                 child: Column(
                   children: <Widget>[
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     TextFormField(
                       validator: (val) =>
@@ -58,7 +53,7 @@ class _RegisterState extends State<Register> {
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     TextFormField(
                       validator: (val) => val.isEmpty ? 'Enter an Email' : null,
@@ -68,7 +63,7 @@ class _RegisterState extends State<Register> {
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     TextFormField(
                       validator: (val) =>
@@ -80,7 +75,7 @@ class _RegisterState extends State<Register> {
                       obscureText: true,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     TextFormField(
                       validator: (val) =>
@@ -91,7 +86,7 @@ class _RegisterState extends State<Register> {
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     RaisedButton(
                       child: Text("Register"),
@@ -109,19 +104,6 @@ class _RegisterState extends State<Register> {
                           }
                         }
                       },
-                    ),
-                    RaisedButton(
-                      child: Text("SignIn"),
-                      onPressed: () {
-                        widget.toggleView();
-                      },
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      error,
-                      style: TextStyle(color: Colors.red),
                     ),
                   ],
                 ),

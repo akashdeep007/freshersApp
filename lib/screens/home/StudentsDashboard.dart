@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hogwarts/screens/home/CustomDrawer.dart';
 import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/services/database.dart';
 import 'package:hogwarts/screens/home/StudentList.dart';
@@ -10,22 +11,34 @@ class StudentDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<Student>>.value(
-      value: DatabaseService().students,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Hogwarts"),
-          actions: <Widget>[
-            FlatButton.icon(
-              icon: Icon(Icons.person),
-              label: Text('logout'),
-              onPressed: () async {
-                await _auth.signOut();
-              },
+        value: DatabaseService().students,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text("Hogwarts"),
             ),
-          ],
-        ),
-        body: StudentList(),
-      ),
-    );
+            drawer: CustomDrawer(),
+            body: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Card(
+                      color: Colors.black12,
+                    ),
+                    Card(
+                      child: Column(
+                        children: <Widget>[
+                          Text("12"),
+                        ],
+                      ),
+                      color: Colors.black12,
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: StudentList(),
+                )
+              ],
+            )));
   }
 }

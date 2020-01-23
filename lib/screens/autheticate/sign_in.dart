@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hogwarts/screens/autheticate/LoginDrawer.dart';
 import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/shared/loading.dart';
 
@@ -29,15 +30,8 @@ class _SignInState extends State<SignIn> {
               elevation: 0.0,
               backgroundColor: Colors.amber,
               title: Text("Sign In"),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text("Anonymous"),
-                  onPressed: () {
-                    _auth.signInAnon();
-                  },
-                )
-              ],
             ),
+            drawer: LoginDrawer(),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
               child: Form(
@@ -84,12 +78,6 @@ class _SignInState extends State<SignIn> {
                             });
                           }
                         }
-                      },
-                    ),
-                    RaisedButton(
-                      child: Text("Register"),
-                      onPressed: () {
-                        widget.toggleView();
                       },
                     ),
                   ],
