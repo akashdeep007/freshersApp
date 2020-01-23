@@ -3,9 +3,6 @@ import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/shared/loading.dart';
 
 class Register extends StatefulWidget {
-  final Function toggleView;
-  Register({this.toggleView});
-
   @override
   _RegisterState createState() => _RegisterState();
 }

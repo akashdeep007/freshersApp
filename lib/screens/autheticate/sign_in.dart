@@ -4,9 +4,6 @@ import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/shared/loading.dart';
 
 class SignIn extends StatefulWidget {
-  final Function toggleView;
-  SignIn({this.toggleView});
-
   @override
   _SignInState createState() => _SignInState();
 }

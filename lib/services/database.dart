@@ -17,7 +17,7 @@ class DatabaseService {
   }
 
   //List of Students
-  List<Student> _StudentListFromSnapshot(QuerySnapshot snapshot) {
+  List<Student> _studentListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Student(
           name: doc.data['Name'] ?? "",
@@ -27,7 +27,7 @@ class DatabaseService {
   }
 
   Stream<List<Student>> get students {
-    return studentCollection.snapshots().map(_StudentListFromSnapshot);
+    return studentCollection.snapshots().map(_studentListFromSnapshot);
   }
 
   //userdata from snapshots

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hogwarts/screens/home/CustomDrawer.dart';
-import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/services/database.dart';
 import 'package:hogwarts/screens/home/StudentList.dart';
 import 'package:provider/provider.dart';
 import 'package:hogwarts/models/Student.dart';
 
 class StudentDashboard extends StatelessWidget {
-  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return StreamProvider<List<Student>>.value(
@@ -29,7 +26,10 @@ class StudentDashboard extends StatelessWidget {
                         width: 160,
                         child: Column(
                           children: <Widget>[
-                            Text(studentLenght.toString(),
+                            Text(
+                                listLenght == null
+                                    ? "0"
+                                    : listLenght.toString(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 72)),
                             Text("Enrolled",

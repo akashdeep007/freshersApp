@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts/models/user.dart';
-import 'package:hogwarts/screens/autheticate/autheticate.dart';
+import 'package:hogwarts/screens/autheticate/sign_in.dart';
 import 'package:provider/provider.dart';
 import './home/home.dart';
 
@@ -9,7 +9,7 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
     if (user == null) {
-      return Authenticate();
+      return SignIn();
     } else {
       return Home();
     }
