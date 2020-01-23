@@ -24,6 +24,6 @@ class _StudentListState extends State<StudentList> {
   }
 
   int listLength() {
-    return studentLenght;
+    return studentLenght == null ? listLength() : studentLenght;
   }
 }

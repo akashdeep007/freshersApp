@@ -16,7 +16,6 @@ class StudentDashboard extends StatelessWidget {
             appBar: AppBar(
               title: Text("Hogwarts"),
             ),
-            drawer: CustomDrawer(),
             body: Column(
               children: <Widget>[
                 Row(

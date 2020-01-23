@@ -12,13 +12,6 @@ class LoginDrawer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           FlatButton(
-            child: Text("SignIn"),
-            onPressed: () {
-              Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => SignIn()));
-            },
-          ),
-          FlatButton(
             child: Text("Register"),
             onPressed: () {
               Navigator.push(context,

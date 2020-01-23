@@ -34,7 +34,6 @@ class _RegisterState extends State<Register> {
               backgroundColor: Colors.amber,
               title: Text("Register"),
             ),
-            drawer: LoginDrawer(),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
               child: Form(

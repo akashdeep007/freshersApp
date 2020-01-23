@@ -13,14 +13,8 @@ class CustomDrawer extends StatelessWidget {
     final user = Provider.of<User>(context);
     return Drawer(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          FlatButton(
-            child: Text("HomePage"),
-            onPressed: () {
-              Navigator.push(
-                  context, new MaterialPageRoute(builder: (context) => Home()));
-            },
-          ),
           FlatButton(
             child: Text("StudentDashboard"),
             onPressed: () {
