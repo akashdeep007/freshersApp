@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts/screens/autheticate/register.dart';
-import 'package:hogwarts/screens/autheticate/sign_in.dart';
 import 'package:hogwarts/services/auth.dart';
 
 class LoginDrawer extends StatelessWidget {
