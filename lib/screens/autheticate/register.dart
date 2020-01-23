@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts/services/auth.dart';
-import 'package:hogwarts/shared/loading.dart';
+import 'package:hogwarts/shared/color_loader.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -21,7 +21,13 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return loading
-        ? Loading()
+        ? ColorLoader(colors: [
+            Colors.amber[100],
+            Colors.amber[200],
+            Colors.amber[300],
+            Colors.amber[400],
+            Colors.amber[500]
+          ], duration: Duration(seconds: 2))
         : Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.amber[50],

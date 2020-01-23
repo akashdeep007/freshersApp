@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts/screens/autheticate/LoginDrawer.dart';
 import 'package:hogwarts/services/auth.dart';
-import 'package:hogwarts/shared/loading.dart';
+import 'package:hogwarts/shared/color_loader.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -20,7 +20,13 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return loading
-        ? Loading()
+        ? ColorLoader(colors: [
+            Colors.amber[100],
+            Colors.amber[200],
+            Colors.amber[300],
+            Colors.amber[400],
+            Colors.amber[500]
+          ], duration: Duration(seconds: 2))
         : Scaffold(
             backgroundColor: Colors.amber[50],
             appBar: AppBar(
