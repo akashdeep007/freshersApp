@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts/models/Event.dart';
-import 'package:hogwarts/screens/home/CustomDrawer.dart';
-import 'package:hogwarts/screens/home/EventList.dart';
+import 'package:hogwarts/screens/home/HomePage/CustomDrawer.dart';
+import 'package:hogwarts/screens/home/HomePage/EventList.dart';
 import 'package:hogwarts/services/events.dart';
 import 'package:provider/provider.dart';
 

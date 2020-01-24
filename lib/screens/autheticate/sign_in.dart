@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hogwarts/screens/autheticate/LoginDrawer.dart';
+import 'package:flutter/services.dart';
+import 'package:hogwarts/screens/autheticate/register.dart';
 import 'package:hogwarts/services/auth.dart';
 import 'package:hogwarts/shared/color_loader.dart';
 
@@ -12,6 +13,7 @@ class _SignInState extends State<SignIn> {
   String userName = '';
   String password = '';
   String error = '';
+  dynamic result;
 
   final AuthService _auth = AuthService();
   bool loading = false;
@@ -33,8 +35,18 @@ class _SignInState extends State<SignIn> {
               elevation: 0.0,
               backgroundColor: Colors.amber,
               title: Text("Sign In"),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text("Register"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => Register()));
+                  },
+                )
+              ],
             ),
-            drawer: LoginDrawer(),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
               child: Form(
@@ -66,18 +78,26 @@ class _SignInState extends State<SignIn> {
                     SizedBox(
                       height: 20,
                     ),
+                    Text(
+                      error,
+                      style: TextStyle(
+                          color: Colors.red, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     RaisedButton(
                       child: Text("Sign In"),
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
                           setState(() => loading = true);
-                          dynamic result = await _auth
-                              .signInWithEmailAndPassword(userName, password);
-                          if (result == null) {
+                          result = await _auth.signInWithEmailAndPassword(
+                              userName, password);
+
+                          if (error != null && result == null) {
                             setState(() {
-                              error =
-                                  "Could not Sign In with those credentials";
                               loading = false;
+                              error = "Username or Password is Incorrect";
                             });
                           }
                         }

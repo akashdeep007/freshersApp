@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts/models/user.dart';
+import 'package:hogwarts/screens/home/Dashboard/DashboardHome.dart';
 import 'package:hogwarts/services/auth.dart';
-import 'package:hogwarts/screens/home/StudentsDashboard.dart';
 import 'package:hogwarts/services/database.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +37,7 @@ class CustomDrawer extends StatelessWidget {
                     Navigator.push(
                         context,
                         new MaterialPageRoute(
-                            builder: (context) => StudentDashboard()));
+                            builder: (context) => DashboardHome()));
                   },
                 ),
                 FlatButton(

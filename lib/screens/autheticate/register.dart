@@ -89,18 +89,27 @@ class _RegisterState extends State<Register> {
                     SizedBox(
                       height: 10,
                     ),
+                    Text(
+                      error,
+                      style: TextStyle(
+                          color: Colors.red, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     RaisedButton(
                       child: Text("Register"),
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
                           setState(() => loading = true);
+
                           dynamic result =
                               await _auth.registerwithEmailandPassword(
                                   name, email, password, interests);
                           if (result == null) {
                             setState(() {
-                              error = "Please enter valid email";
                               loading = false;
+                              error = "Please Enter valid Email and Password.";
                             });
                           }
                         }
