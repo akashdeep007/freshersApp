@@ -16,23 +16,41 @@ class CustomDrawer extends StatelessWidget {
           UserData userData = snapshot.data;
           return Drawer(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Card(
                   child: Container(
+                    color: Colors.blue,
+                    height: 200,
+                    width: double.infinity,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Icon(
-                          Icons.person_pin,
-                          size: 64,
+                          Icons.portrait,
+                          size: 128,
                         ),
-                        Text(userData == null ? "null" : userData.name),
+                        Text(
+                          userData == null ? "null" : userData.name,
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 FlatButton(
-                  child: Text("StudentDashboard"),
+                  child: Container(
+                      width: double.infinity,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Icon(Icons.dashboard),
+                            Text(
+                              "StudentDashboard",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ])),
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -41,7 +59,17 @@ class CustomDrawer extends StatelessWidget {
                   },
                 ),
                 FlatButton(
-                  child: Text("Logout"),
+                  child: Container(
+                      width: double.infinity,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Icon(Icons.chevron_left),
+                            Text(
+                              "Logout",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ])),
                   onPressed: () {
                     _auth.signOut();
                   },
